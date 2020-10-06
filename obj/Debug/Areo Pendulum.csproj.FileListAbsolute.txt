@@ -1,0 +1,109 @@
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo Pendulum.csprojAssemblyReference.cache
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo Pendulum.csproj.GenerateResource.cache
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum\Areo Pendulum\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo Pendulum.csprojAssemblyReference.cache
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo Pendulum.csproj.GenerateResource.cache
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder\Areo Pendulum\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder\Areo Pendulum\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\New folder\Areo Pendulum\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder\Areo Pendulum\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo Pendulum.csproj.GenerateResource.cache
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\Areo Pendulum\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\Bulb.exe
+D:\New folder\visual Studio\Areo Pendulum\bin\Debug\Bulb.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\Bulb.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\Areo Pendulum - Copy\bin\Debug\Bulb.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\Areo Pendulum - Copy\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\Bulb.exe
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\bin\Debug\Bulb.pdb
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\Bulb.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\bin\Debug\Bulb.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - Copy - Copy\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\Areo Pendulum.exe.config
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\Areo Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\Areo Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\Bulb.exe
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\bin\Debug\Bulb.pdb
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\New folder (2)\Areo Pendulum - systemPID\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\bin\Debug\Aero Pendulum.exe.config
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\bin\Debug\Aero Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\bin\Debug\Aero Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Aero_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Aero Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID\obj\Debug\Aero Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\bin\Debug\Aero Pendulum.exe.config
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Aero Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Aero Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\bin\Debug\Aero Pendulum.exe
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\bin\Debug\Aero Pendulum.pdb
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\bin\Debug\kayChart.dll
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Areo_Pendulum.Form1.resources
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Aero_Pendulum.Properties.Resources.resources
+D:\New folder\visual Studio\New folder (2)\Aero Pendulum - systemPID - Copy\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Debug\Aero Pendulum.exe.config
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Aero Pendulum.exe
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Aero Pendulum.pdb
