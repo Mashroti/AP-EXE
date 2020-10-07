@@ -1,0 +1,10 @@
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Release\Aero Pendulum.exe.config
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Areo Pendulum.csproj.ResolveComReference.cache
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Areo_Pendulum.Form1.resources
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Aero_Pendulum.Properties.Resources.resources
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Areo Pendulum.csproj.GenerateResource.Cache
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Release\Aero Pendulum.exe
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Release\Aero Pendulum.pdb
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Release\kayChart.dll
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Aero Pendulum.exe
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Release\Aero Pendulum.pdb

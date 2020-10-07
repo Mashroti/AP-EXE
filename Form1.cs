@@ -333,7 +333,7 @@ namespace Areo_Pendulum
         {
             try
             {
-                if (serialPort1.IsOpen && checkBox1.Checked && !on_off)
+                if (serialPort1.IsOpen && checkBox1.Checked)
                 {
                     serialPort1.Write(string.Format("PWM:{0}\r\n", trackBar1.Value));
                 }
@@ -346,18 +346,22 @@ namespace Areo_Pendulum
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen && !checkBox1.Checked)
+            if (serialPort1.IsOpen)
             {
-                serialPort1.Write("PWM:3272\r\n");
-            }
-            else if (serialPort1.IsOpen && checkBox1.Checked && !on_off)
-            {
-                
+                if (!checkBox1.Checked && !showangel.Checked)
+                {
+                    serialPort1.Write("PWM:3272\r\n");
+                }
+                else if (checkBox1.Checked && showangel.Checked)
+                {
+                    checkBox1.Checked = false;
+                }
             }
             else
             {
                 checkBox1.Checked = false;
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -372,39 +376,24 @@ namespace Areo_Pendulum
 
         private void showangel_CheckedChanged(object sender, EventArgs e)
         {
-            if (!serialPort1.IsOpen || on_off)
+            if (serialPort1.IsOpen && !checkBox1.Checked)
+            {
+                if (showangel.Checked)
+                {
+                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:on";
+                    serialPort1.Write(data + "\r\n");
+                }
+                if (!showangel.Checked)
+                {
+                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:off";
+                    serialPort1.Write(data + "\r\n");
+                }
+            }
+            else
             {
                 showangel.Checked = false;
-            } 
+            }
 
-
-            Task.Factory.StartNew(() =>
-            {
-                while (showangel.Checked)
-                {
-                    
-                    serialPort1.Write("Angle?\r\n");
-                    System.Threading.Thread.Sleep(50);
-                    if (new_data==true)
-                    {
-                        this.Invoke(new MethodInvoker(delegate
-                        {
-                            chart1.Series[1].Points.AddXY(x, setpoint);
-                            chart1.Series[2].Points.AddXY(x, 0);
-
-                            chart1.ChartAreas[0].AxisX.ScaleView.Size = axisx;
-                            if (x > axisx)
-                            {
-                                chart1.ChartAreas[0].AxisX.ScaleView.Position = x - axisx;
-                            }
-                        }));
-
-                        data_out += string.Format("{0,4:0000},{1,4:000},{2,4:000},{3,8:0000.00},{4,8:0000.00},{5,8:0000.00}\r\n",
-                                    x, Angel, 0, 0, 0, 0);
-                        new_data = false;
-                    }
-                }
-            });
         }
 
         /*
