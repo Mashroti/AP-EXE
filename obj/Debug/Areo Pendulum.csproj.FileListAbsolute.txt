@@ -107,3 +107,7 @@ D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Debug\Aero Pendulum.exe.c
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Aero Pendulum.exe
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Aero Pendulum.pdb
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo_Pendulum.Form1.resources
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Aero_Pendulum.Properties.Resources.resources
+D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache

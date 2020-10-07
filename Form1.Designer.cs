@@ -37,7 +37,6 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.OpenPort_ToolStripMenuItem = new System.Windows.Forms.Button();
             this.btnOnOff = new System.Windows.Forms.Button();
-            this.btnSetPoint = new System.Windows.Forms.Button();
             this.txtSetPoint = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSP = new System.Windows.Forms.TextBox();
@@ -49,7 +48,6 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.angelbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.showangel = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,9 +60,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -106,26 +101,15 @@
             this.btnOnOff.UseVisualStyleBackColor = true;
             this.btnOnOff.Click += new System.EventHandler(this.btnOnOff_Click);
             // 
-            // btnSetPoint
-            // 
-            this.btnSetPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetPoint.Location = new System.Drawing.Point(4, 43);
-            this.btnSetPoint.Name = "btnSetPoint";
-            this.btnSetPoint.Size = new System.Drawing.Size(80, 23);
-            this.btnSetPoint.TabIndex = 8;
-            this.btnSetPoint.Text = "SetPoint";
-            this.btnSetPoint.UseVisualStyleBackColor = true;
-            this.btnSetPoint.Click += new System.EventHandler(this.btnSetPoint_Click);
-            // 
             // txtSetPoint
             // 
             this.txtSetPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSetPoint.Location = new System.Drawing.Point(36, 17);
+            this.txtSetPoint.Location = new System.Drawing.Point(5, 46);
             this.txtSetPoint.MaxLength = 3;
             this.txtSetPoint.Name = "txtSetPoint";
-            this.txtSetPoint.Size = new System.Drawing.Size(48, 20);
+            this.txtSetPoint.Size = new System.Drawing.Size(70, 20);
             this.txtSetPoint.TabIndex = 7;
-            this.txtSetPoint.Text = "20";
+            this.txtSetPoint.Text = "25";
             this.txtSetPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSetPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSetPoint_KeyPress);
             // 
@@ -133,13 +117,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label2.Font = new System.Drawing.Font("B Nazanin", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label2.Location = new System.Drawing.Point(4, 20);
+            this.label2.Location = new System.Drawing.Point(22, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 17);
+            this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 6;
-            this.label2.Text = "SP:";
+            this.label2.Text = "input";
             // 
             // txtSP
             // 
@@ -148,7 +132,7 @@
             this.txtSP.Name = "txtSP";
             this.txtSP.Size = new System.Drawing.Size(70, 20);
             this.txtSP.TabIndex = 9;
-            this.txtSP.Text = "45";
+            this.txtSP.Text = "20";
             this.txtSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -159,7 +143,7 @@
             this.txtSI.Name = "txtSI";
             this.txtSI.Size = new System.Drawing.Size(71, 20);
             this.txtSI.TabIndex = 10;
-            this.txtSI.Text = "0";
+            this.txtSI.Text = "15";
             this.txtSI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -170,7 +154,7 @@
             this.txtSD.Name = "txtSD";
             this.txtSD.Size = new System.Drawing.Size(71, 20);
             this.txtSD.TabIndex = 11;
-            this.txtSD.Text = "0";
+            this.txtSD.Text = "10";
             this.txtSD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -220,11 +204,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.label1.Font = new System.Drawing.Font("B Nazanin", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(141, 16);
+            this.label1.Location = new System.Drawing.Point(142, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 21);
+            this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "output";
             // 
@@ -292,7 +276,6 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.angelbox);
-            this.groupBox2.Controls.Add(this.btnSetPoint);
             this.groupBox2.Controls.Add(this.txtSetPoint);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(10, 80);
@@ -365,31 +348,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Encoder Reset";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(10, 389);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(172, 389);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "Reset Graph";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 20;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.InactiveBorder;
@@ -401,10 +359,21 @@
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Right;
-            legend1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.BorderColor = System.Drawing.Color.Transparent;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            legend1.InterlacedRows = true;
+            legend1.IsTextAutoFit = false;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
             legend1.Name = "Legend1";
+            legend1.Position.Auto = false;
+            legend1.Position.Height = 15F;
+            legend1.Position.Width = 18F;
+            legend1.Position.X = 78F;
+            legend1.Position.Y = 6F;
+            legend1.ShadowColor = System.Drawing.Color.Transparent;
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(265, 0);
+            this.chart1.Location = new System.Drawing.Point(253, 0);
             this.chart1.Name = "chart1";
             series1.BorderWidth = 4;
             series1.ChartArea = "ChartArea1";
@@ -418,7 +387,7 @@
             series2.Name = "input";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(555, 422);
+            this.chart1.Size = new System.Drawing.Size(567, 391);
             this.chart1.TabIndex = 48;
             this.chart1.Text = "chart1";
             // 
@@ -429,10 +398,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(820, 422);
+            this.ClientSize = new System.Drawing.Size(820, 391);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -442,8 +409,8 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(2000, 2000);
-            this.MinimumSize = new System.Drawing.Size(836, 461);
+            this.MaximumSize = new System.Drawing.Size(836, 430);
+            this.MinimumSize = new System.Drawing.Size(836, 430);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Tag = "";
@@ -470,7 +437,6 @@
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button OpenPort_ToolStripMenuItem;
         private System.Windows.Forms.Button btnOnOff;
-        private System.Windows.Forms.Button btnSetPoint;
         private System.Windows.Forms.TextBox txtSetPoint;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSP;
@@ -482,7 +448,6 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TextBox angelbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.CheckBox showangel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -495,9 +460,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

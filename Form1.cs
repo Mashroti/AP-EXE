@@ -52,6 +52,7 @@ namespace Areo_Pendulum
             chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
             //chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
 
+
             chart1.Series[0].Points.AddXY(0, 0);
             chart1.Series[1].Points.AddXY(0, 0);
         }
@@ -275,36 +276,43 @@ namespace Areo_Pendulum
                 {
                     on_off = true;
                     btnOnOff.Text = "Motor OFF";
-                    txtSP.Text = txtSP.Text.Replace(".", dot.ToString());
+
+                    //txtSetPoint.Text = txtSetPoint.Text.Replace(".", dot.ToString());
+                    if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
+                    string SP = txtSetPoint.Text;
+                    //setpoint = Convert.ToInt16(txtSetPoint.Text);
+
+                    //txtSP.Text = txtSP.Text.Replace(".", dot.ToString());
                     if (txtSP.Text == "") txtSP.Text = "0";
-                    Kp = Convert.ToDouble(txtSP.Text);
+                    string KP = txtSP.Text;
+                    //Kp = Convert.ToDouble(txtSP.Text);
 
-                    txtSI.Text = txtSI.Text.Replace(".", dot.ToString());
+                    //txtSI.Text = txtSI.Text.Replace(".", dot.ToString());
                     if (txtSI.Text == "") txtSI.Text = "0";
-                    Ki = Convert.ToDouble(txtSI.Text);
+                    string KI = txtSI.Text;
+                    //Ki = Convert.ToDouble(txtSI.Text);
 
-                    txtSD.Text = txtSD.Text.Replace(".", dot.ToString());
+                    //txtSD.Text = txtSD.Text.Replace(".", dot.ToString());
                     if (txtSD.Text == "") txtSD.Text = "0";
-                    Kd = Convert.ToDouble(txtSD.Text);
+                    string KD = txtSD.Text;
+                    //Kd = Convert.ToDouble(txtSD.Text);
 
-                    for (int i = 2; i < 5; i++) chart1.Series[i].Points.AddXY(x, 0);
-                    integral = 0;
-                    derivative = 0;
-                    timer2.Enabled = true;
+                    string data = "P:" + KP + ",I:" + KI + ",D:" + KD + ",SP:" + SP + ",status:on";
+                    serialPort1.Write(data + "\r\n");
+
+                    chart1.Series[0].Points.Clear();
+                    chart1.Series[1].Points.Clear();
+
+                    chart1.Series[0].Points.AddXY(0, 0);
+                    chart1.Series[1].Points.AddXY(0, 0);
                 }
                 else 
                 {
                     on_off = false;
-                    timer2.Enabled = false;
                     btnOnOff.Text = "Motor ON";
-                    serialPort1.Write("PWM:3272\r\n");
-                    System.Threading.Thread.Sleep(50);
-                    serialPort1.Write("PWM:3272\r\n");
-                    System.Threading.Thread.Sleep(50);
-                    serialPort1.Write("PWM:3272\r\n");
-                    System.Threading.Thread.Sleep(50);
-                    serialPort1.Write("PWM:3272\r\n");
 
+                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:off";
+                    serialPort1.Write(data + "\r\n");
                 }
             }
             
@@ -383,15 +391,11 @@ namespace Areo_Pendulum
                         {
                             chart1.Series[1].Points.AddXY(x, setpoint);
                             chart1.Series[2].Points.AddXY(x, 0);
-                            chart1.Series[3].Points.AddXY(x, 0);
-                            chart1.Series[4].Points.AddXY(x, 0);
 
                             chart1.ChartAreas[0].AxisX.ScaleView.Size = axisx;
-                            chart1.ChartAreas[1].AxisX.ScaleView.Size = chart1.ChartAreas[0].AxisX.ScaleView.Size;
                             if (x > axisx)
                             {
                                 chart1.ChartAreas[0].AxisX.ScaleView.Position = x - axisx;
-                                chart1.ChartAreas[1].AxisX.ScaleView.Position = x - axisx;
                             }
                         }));
 
@@ -403,6 +407,7 @@ namespace Areo_Pendulum
             });
         }
 
+        /*
         private void button3_Click(object sender, EventArgs e)
         {
             data_out = "";
@@ -411,105 +416,25 @@ namespace Areo_Pendulum
             for (byte i = 0; i < 5; i++) chart1.Series[i].Points.Clear();
             for (byte i = 0; i < 5; i++) chart1.Series[i].Points.AddXY(0, 0);
             chart1.ChartAreas[0].AxisY.ScaleView.Zoom(-30, 100);
-            chart1.ChartAreas[1].AxisY.ScaleView.Zoom(-100, 100);
             chart1.ChartAreas[0].AxisX.ScaleView.Zoom(0, axisx);
-            chart1.ChartAreas[1].AxisX.ScaleView.Zoom(0, axisx);
         }
+        */
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
+        /*
         private void timer2_Tick(object sender, EventArgs e)
         {
             serialPort1.Write("Angle?\r\n");
             System.Threading.Thread.Sleep(5);
 
-            if (new_data)
-            {
-                error = setpoint - Angel;
-
-                integral = (Ki * (error + previous_error) * dt / 2) + integral;
-
-                N = (1.0 / dt) * 0.4;
-                filter += dt * derivative;
-                derivative = (Kd * error - filter) * N;
-
-                P = Kp * error;
-
-                PID = Convert.ToInt32(P + integral + derivative) + min;
-
-                if (PID > max) PID = max;
-                if (PID < min) PID = min;
-
-                previous_error = error;
-
-                serialPort1.Write(string.Format("PWM:{0}\r\n", PID));
-
                 chart1.Series[0].Points.AddXY(x, Angel);
                 chart1.Series[1].Points.AddXY(x, setpoint);
-                chart1.Series[2].Points.AddXY(x, P);
-                chart1.Series[3].Points.AddXY(x, integral);
-                chart1.Series[4].Points.AddXY(x, derivative);
-                chart1.Series[5].Points.AddXY(x, PID);
-
-                chart1.ChartAreas[0].AxisX.ScaleView.Size = axisx;
-                chart1.ChartAreas[1].AxisX.ScaleView.Size = axisx;
-                if (x > axisx)
-                {
-                    chart1.ChartAreas[0].AxisX.ScaleView.Position = x - axisx;
-                    chart1.ChartAreas[1].AxisX.ScaleView.Position = x - axisx;
-                }
 
                 data_out += string.Format("{0,4:0000},{1,4:000},{2,4:000},{3,8:0000.00},{4,8:0000.00},{5,8:0000.00}\r\n",
                     x, Angel, setpoint, P, integral, derivative);
-                new_data = false;
-            }
+
         }
+        */
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (!on_off)
-            {
-                saveFileDialog1.Filter = "CSV(Comma delimited)(*.csv)|*.csv";
-                saveFileDialog1.FileName = String.Empty;
-                saveFileDialog1.DefaultExt = ".csv";
-                DialogResult result = saveFileDialog1.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    FileStream fs = new FileStream(saveFileDialog1.FileName, FileMode.Create);
-                    StreamWriter writer = new StreamWriter(fs);
-                    writer.Write(data_out);
-                    writer.Close();
-                }
-            }
-
-            /*double P = 0.0025, I = 0.25, D = 55.25;
-            TextWriter tw = new StreamWriter("D:\\sample.txt");
-
-            textBox1.Text += "\t," + P.ToString() + "\t," + I.ToString() + "\t," + D.ToString() + "\r\n";
-            tw.Write(textBox1.Text);
-            tw.Close();*/
-        }
-
-        private void chart1_AxisViewChanged(object sender, ViewEventArgs e)
-        {
-            ChartArea ca1 = chart1.ChartAreas[0];
-            ChartArea ca2 = chart1.ChartAreas[1];
-            Axis ax1 = ca1.AxisX;
-            Axis ax2 = ca2.AxisX;
-
-            if (e.Axis == ax1)
-            {
-                ax2.ScaleView.Size = ax1.ScaleView.Size;
-                ax2.ScaleView.Position = ax1.ScaleView.Position;
-            }
-            if (e.Axis == ax2)
-            {
-                ax1.ScaleView.Size = ax2.ScaleView.Size;
-                ax1.ScaleView.Position = ax2.ScaleView.Position;
-            }
-        }
     }
 }
