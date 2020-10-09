@@ -20,19 +20,19 @@ namespace Areo_Pendulum
 {
     public partial class Form1 : Form
     {
-        Stopwatch sw = new Stopwatch(); 
+        Stopwatch sw = new Stopwatch();
+        int file_name = 1;
+        bool on_off = false;
 
-        bool on_off = false ,new_data = false;
-
-        double Kp = 1;
-        double Ki = 0;                       
-        double Kd = 0;
+        //double Kp = 1;
+        //double Ki = 0;                       
+        //double Kd = 0;
 
         int time_mili = 0;
         int Angel = 0;
         int setpoint = 0;
 
-        int x = 0, axisx=150;
+        int x = 0, axisx=10000;
         
         string data_out;
         char dot = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
@@ -42,19 +42,37 @@ namespace Areo_Pendulum
         {
             InitializeComponent();
 
-            chart1.ChartAreas[0].AxisY.ScaleView.Zoom(-30, 100);
-            chart1.ChartAreas[0].AxisX.ScaleView.Zoom(0, axisx);
-
+            //chart1.ChartAreas[0].AxisY.ScaleView.Zoom(-30, 100);
+            //chart1.ChartAreas[0].AxisX.ScaleView.Zoom(0, axisx);
+           
+            //chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset(1);
             chart1.ChartAreas[0].CursorX.IsUserEnabled = true;
             chart1.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
-            //chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
-            //chart1.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
+            chart1.ChartAreas[0].CursorY.IsUserEnabled = true;
+            chart1.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
             chart1.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-            //chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
-
+            chart1.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
 
             chart1.Series[0].Points.AddXY(0, 0);
             chart1.Series[1].Points.AddXY(0, 0);
+
+
+            bool exit = true;
+            while (exit)
+            {
+                string path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
+                if (File.Exists(path))
+                {
+                    file_name++;
+                    //MessageBox.Show("فایل مورد نظر وجود دارد");
+                }
+                else
+                {
+                    exit = false;
+                    file_name--;
+                    //MessageBox.Show("فایل مورد نظر وجود ندارد");
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -211,31 +229,30 @@ namespace Areo_Pendulum
                 return;
             }
 
-            else if (value.Contains("Angle:"))
+            else if (value.Contains("data"))
             {
-                string data = value.Substring(6, 4);
+
+                string[] stringValues = value.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
                 double zavye;
-                bool result = double.TryParse(data, out zavye);
+                bool result = double.TryParse(stringValues[1], out zavye);
                 if (result)
                 {
                     Angel = (int)zavye;
-
                     angelbox.Text = zavye.ToString();
                 }
 
-                if (value.Contains("time:"))   //time:020154
+                double time;
+                result = double.TryParse(stringValues[2], out time);
+                if (result)
                 {
-                    data = value.Substring(5, 6);
-                    double time;
-                    result = double.TryParse(data, out time);
-                    if (result)
-                    {
-                        time_mili = (int)time;
-                        chart1.Series[0].Points.AddXY(time_mili, Angel);
-                    }
+                    time_mili = (int)time;
+                    chart1.Series[0].Points.AddXY(time_mili, Angel);
+                    chart1.Series[1].Points.AddXY(time_mili, setpoint);
+
+                    data_out += Angel.ToString() + "," + time_mili.ToString() + "\r\n";
                 }
             }
-
 
         }
 
@@ -277,10 +294,24 @@ namespace Areo_Pendulum
                     on_off = true;
                     btnOnOff.Text = "Motor OFF";
 
+                    chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset(10);
+                    chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset(10);
+                    chart1.Series[0].Points.AddXY(0, 0);
+                    chart1.Series[1].Points.AddXY(0, 0);
+
+
+                    // file create
+                    file_name++;
+                    string path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
+                    using (FileStream fs = File.Create(path))
+                    {
+
+                    }
+
                     //txtSetPoint.Text = txtSetPoint.Text.Replace(".", dot.ToString());
                     if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
                     string SP = txtSetPoint.Text;
-                    //setpoint = Convert.ToInt16(txtSetPoint.Text);
+                    setpoint = Convert.ToInt16(txtSetPoint.Text);
 
                     //txtSP.Text = txtSP.Text.Replace(".", dot.ToString());
                     if (txtSP.Text == "") txtSP.Text = "0";
@@ -313,6 +344,34 @@ namespace Areo_Pendulum
 
                     string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:off";
                     serialPort1.Write(data + "\r\n");
+
+                    string path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
+
+                    if (File.Exists(path))
+                    {
+                        FileStream fileStream = new FileStream(path, FileMode.Append);
+                        try
+                        {
+                            Byte[] info = new UTF8Encoding(true).GetBytes(data_out);
+                            fileStream.Write(info, 0, info.Length);
+                            fileStream.Close();
+                        }
+                        catch
+                        {
+                            //MessageBox.Show("error to save data");
+                        }
+                    }
+                    else
+                    {
+                        file_name--;
+                        path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
+                        using (FileStream fs = File.Create(path))
+                        {
+                            Byte[] info = new UTF8Encoding(true).GetBytes(data_out);
+                            fs.Write(info, 0, info.Length);
+                        }
+                    }
+                    data_out = "";
                 }
             }
             
