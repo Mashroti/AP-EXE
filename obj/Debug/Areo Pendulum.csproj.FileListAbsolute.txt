@@ -114,3 +114,14 @@ D:\Code\visual Studio\New folder (2)\Aero Pendulum\obj\Debug\Areo Pendulum.cspro
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Debug\Aero Pendulum.exe
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Debug\Aero Pendulum.pdb
 D:\Code\visual Studio\New folder (2)\Aero Pendulum\bin\Debug\kayChart.dll
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\bin\Debug\Aero Pendulum.exe.config
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Areo Pendulum.csproj.ResolveComReference.cache
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Aero Pendulum.exe
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Aero Pendulum.pdb
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\bin\Debug\Aero Pendulum.exe
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\bin\Debug\Aero Pendulum.pdb
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\bin\Debug\kayChart.dll
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Areo Pendulum.csprojResolveAssemblyReference.cache
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Areo_Pendulum.Form1.resources
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Aero_Pendulum.Properties.Resources.resources
+C:\Users\Mashroti\Documents\GitHub\Aero-Pendulum-EXE\obj\Debug\Areo Pendulum.csproj.GenerateResource.Cache
