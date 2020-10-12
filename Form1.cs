@@ -328,7 +328,9 @@ namespace Areo_Pendulum
                     string KD = txtSD.Text;
                     //Kd = Convert.ToDouble(txtSD.Text);
 
-                    string data = "P:" + KP + ",I:" + KI + ",D:" + KD + ",SP:" + SP + ",status:on";
+
+                    //kp%fki%fkd%fsp%dtime%d
+                    string data = "kp" + KP + "ki" + KI + "kd" + KD + "sp" + SP + "time555";
                     serialPort1.Write(data + "\r\n");
 
                     chart1.Series[0].Points.Clear();
@@ -342,7 +344,7 @@ namespace Areo_Pendulum
                     on_off = false;
                     btnOnOff.Text = "Motor ON";
 
-                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:off";
+                    string data = "kp0" + "ki0" + "kd0" + "sp0" + "time444";
                     serialPort1.Write(data + "\r\n");
 
                     string path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
