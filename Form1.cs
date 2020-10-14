@@ -32,7 +32,7 @@ namespace Areo_Pendulum
         int Angel = 0;
         int setpoint = 0;
 
-        int x = 0, axisx=10000;
+        int x = 0, axisx=3000;
 
         string SP, KP, KI, KD;
         string data_out;
@@ -250,6 +250,12 @@ namespace Areo_Pendulum
                     time_mili = (int)time;
                     chart1.Series[0].Points.AddXY(time_mili, Angel);
                     chart1.Series[1].Points.AddXY(time_mili, setpoint);
+
+                    chart1.ChartAreas[0].AxisX.ScaleView.Size = axisx;
+                    if (time_mili > axisx)
+                    {
+                        chart1.ChartAreas[0].AxisX.ScaleView.Position = time_mili - axisx;
+                    }
 
                     data_out += Angel.ToString() + "," + time_mili.ToString() + "\r\n";
                 }

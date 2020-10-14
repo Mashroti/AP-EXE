@@ -351,7 +351,7 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            chartArea1.AxisX.Title = "time";
+            chartArea1.AxisX.Title = "time(ms)";
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Rotated270;
             chartArea1.AxisY.Title = "Angle";
