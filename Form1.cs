@@ -33,7 +33,8 @@ namespace Areo_Pendulum
         int setpoint = 0;
 
         int x = 0, axisx=10000;
-        
+
+        string SP, KP, KI, KD;
         string data_out;
         char dot = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
    
@@ -253,6 +254,16 @@ namespace Areo_Pendulum
                     data_out += Angel.ToString() + "," + time_mili.ToString() + "\r\n";
                 }
             }
+            else if (value.Contains("Angle:"))
+            {
+                string data = value.Substring(6, 4);
+                double zavye;
+                bool result = double.TryParse(data, out zavye);
+                if (result)
+                {
+                    angelbox.Text = zavye.ToString();
+                }
+            }
 
         }
 
@@ -292,12 +303,16 @@ namespace Areo_Pendulum
                 if (!on_off)
                 {
                     on_off = true;
+                    data_out = "";
                     btnOnOff.Text = "Motor OFF";
 
-                    chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset(10);
-                    chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset(10);
+                    chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset(0);
+                    chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset(0);
+
+                    chart1.Series[0].Points.Clear();
+                    chart1.Series[1].Points.Clear();
                     chart1.Series[0].Points.AddXY(0, 0);
-                    chart1.Series[1].Points.AddXY(0, 0);
+                    //chart1.Series[1].Points.AddXY(0, 0);
 
 
                     // file create
@@ -310,41 +325,35 @@ namespace Areo_Pendulum
 
                     //txtSetPoint.Text = txtSetPoint.Text.Replace(".", dot.ToString());
                     if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
-                    string SP = txtSetPoint.Text;
+                    SP = txtSetPoint.Text;
                     setpoint = Convert.ToInt16(txtSetPoint.Text);
+                    chart1.Series[1].Points.AddXY(0, setpoint);
 
                     //txtSP.Text = txtSP.Text.Replace(".", dot.ToString());
                     if (txtSP.Text == "") txtSP.Text = "0";
-                    string KP = txtSP.Text;
+                    KP = txtSP.Text;
                     //Kp = Convert.ToDouble(txtSP.Text);
-
+                    
                     //txtSI.Text = txtSI.Text.Replace(".", dot.ToString());
                     if (txtSI.Text == "") txtSI.Text = "0";
-                    string KI = txtSI.Text;
+                    KI = txtSI.Text;
                     //Ki = Convert.ToDouble(txtSI.Text);
 
                     //txtSD.Text = txtSD.Text.Replace(".", dot.ToString());
                     if (txtSD.Text == "") txtSD.Text = "0";
-                    string KD = txtSD.Text;
+                    KD = txtSD.Text;
                     //Kd = Convert.ToDouble(txtSD.Text);
-
 
                     //kp%fki%fkd%fsp%dtime%d
                     string data = "kp" + KP + "ki" + KI + "kd" + KD + "sp" + SP + "time555";
                     serialPort1.Write(data + "\r\n");
-
-                    chart1.Series[0].Points.Clear();
-                    chart1.Series[1].Points.Clear();
-
-                    chart1.Series[0].Points.AddXY(0, 0);
-                    chart1.Series[1].Points.AddXY(0, 0);
                 }
                 else 
                 {
                     on_off = false;
                     btnOnOff.Text = "Motor ON";
 
-                    string data = "kp0" + "ki0" + "kd0" + "sp0" + "time444";
+                    string data = "kp" + KP + "ki" + KI + "kd" + KD + "sp" + SP + "time444";
                     serialPort1.Write(data + "\r\n");
 
                     string path = Environment.CurrentDirectory + "\\Log" + file_name.ToString() + ".txt";
@@ -373,7 +382,6 @@ namespace Areo_Pendulum
                             fs.Write(info, 0, info.Length);
                         }
                     }
-                    data_out = "";
                 }
             }
             
@@ -430,7 +438,7 @@ namespace Areo_Pendulum
             if (serialPort1.IsOpen)
             {
                 serialPort1.Write("zenc\r\n");
-                System.Threading.Thread.Sleep(50);
+                System.Threading.Thread.Sleep(100);
                 serialPort1.Write("Angle?\r\n");
             }
         }
@@ -441,12 +449,27 @@ namespace Areo_Pendulum
             {
                 if (showangel.Checked)
                 {
-                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:on";
+                    string data = "kp0" + "ki0" + "kd0" + "sp0" + "time555";
                     serialPort1.Write(data + "\r\n");
+
+                    chart1.ChartAreas[0].AxisX.ScaleView.ZoomReset(0);
+                    chart1.ChartAreas[0].AxisY.ScaleView.ZoomReset(0);
+
+                    chart1.Series[0].Points.Clear();
+                    chart1.Series[1].Points.Clear();
+                    chart1.Series[0].Points.AddXY(0, 0);
                 }
                 if (!showangel.Checked)
                 {
-                    string data = "P:0" + ",I:0" + ",D:0" + ",SP:0" + ",status:off";
+                    if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
+                    SP = txtSetPoint.Text;
+                    if (txtSP.Text == "") txtSP.Text = "0";
+                    KP = txtSP.Text;
+                    if (txtSI.Text == "") txtSI.Text = "0";
+                    KI = txtSI.Text;
+                    if (txtSD.Text == "") txtSD.Text = "0";
+                    KD = txtSD.Text;
+                    string data = "kp" + KP + "ki" + KI + "kd" + KD + "sp" + SP + "time444";
                     serialPort1.Write(data + "\r\n");
                 }
             }
