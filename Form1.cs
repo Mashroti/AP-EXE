@@ -318,8 +318,9 @@ namespace Areo_Pendulum
                     chart1.Series[0].Points.Clear();
                     chart1.Series[1].Points.Clear();
                     chart1.Series[0].Points.AddXY(0, 0);
-                    //chart1.Series[1].Points.AddXY(0, 0);
 
+                    chart1.ChartAreas[0].AxisX.ScaleView.Size = axisx;
+                    chart1.ChartAreas[0].AxisX.ScaleView.Position = 0;
 
                     // file create
                     file_name++;
