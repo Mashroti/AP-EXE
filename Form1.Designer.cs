@@ -61,6 +61,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -398,6 +399,10 @@
             this.chart1.TabIndex = 48;
             this.chart1.Text = "chart1";
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 250;
+            // 
             // Form1
             // 
             this.AccessibleDescription = "";
@@ -468,6 +473,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
