@@ -133,7 +133,7 @@
             this.txtSP.Name = "txtSP";
             this.txtSP.Size = new System.Drawing.Size(70, 20);
             this.txtSP.TabIndex = 9;
-            this.txtSP.Text = "20";
+            this.txtSP.Text = "10";
             this.txtSP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -144,7 +144,7 @@
             this.txtSI.Name = "txtSI";
             this.txtSI.Size = new System.Drawing.Size(71, 20);
             this.txtSI.TabIndex = 10;
-            this.txtSI.Text = "15";
+            this.txtSI.Text = "0";
             this.txtSI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -155,7 +155,7 @@
             this.txtSD.Name = "txtSD";
             this.txtSD.Size = new System.Drawing.Size(71, 20);
             this.txtSD.TabIndex = 11;
-            this.txtSD.Text = "10";
+            this.txtSD.Text = "0";
             this.txtSD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSP_KeyPress);
             // 
@@ -421,10 +421,13 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(836, 430);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(836, 430);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Tag = "";
             this.Text = "Aero Pendulum";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -23,7 +23,7 @@ namespace Areo_Pendulum
         Stopwatch sw = new Stopwatch();
         int file_name = 1;
         bool on_off = false;
-
+        bool timer_off = true;
         //double Kp = 1;
         //double Ki = 0;                       
         //double Kd = 0;
@@ -237,7 +237,7 @@ namespace Areo_Pendulum
 
             else
             {
-                if (on_off)
+                if (!timer_off)
                 {
                     data_in[count++] = value;
                     new_data = true;
@@ -305,6 +305,11 @@ namespace Areo_Pendulum
                     if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
                     SP = txtSetPoint.Text;
                     setpoint = Convert.ToInt16(txtSetPoint.Text);
+                    if (setpoint > 45)
+                    {
+                        setpoint = 45;
+                        txtSetPoint.Text = "45";
+                    }
                     chart1.Series[1].Points.AddXY(0, setpoint);
 
                     //txtSP.Text = txtSP.Text.Replace(".", dot.ToString());
@@ -325,6 +330,7 @@ namespace Areo_Pendulum
                     //kp%fki%fkd%fsp%dtime%d
                     string data = "kp" + KP + "ki" + KI + "kd" + KD + "sp" + SP + "time555";
                     serialPort1.Write(data + "\r\n");
+                    timer_off = false;
                     timer2.Enabled = true;
                 }
                 else
@@ -377,9 +383,9 @@ namespace Areo_Pendulum
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void timer2_Tick_1(object sender, EventArgs e)
         {
-            if (!on_off) timer2.Enabled = false;
+            if (timer_off) timer2.Enabled = false;
 
             if (new_data)
             {
@@ -413,18 +419,6 @@ namespace Areo_Pendulum
 
                         data_out += Angel.ToString() + "," + time_mili.ToString() + "\r\n";
                     }
-
-
-                    else if (data_in[i].Contains("Angle:"))
-                    {
-                        string data = data_in[i].Substring(6, 4);
-                        result = double.TryParse(data, out zavye);
-                        if (result)
-                        {
-                            angelbox.Text = zavye.ToString();
-                        }
-                    }
-
                 }
                 angelbox.Text = zavye.ToString();
                 count = 0;
@@ -485,7 +479,8 @@ namespace Areo_Pendulum
             {
                 if (showangel.Checked)
                 {
-                    on_off = true;
+                    timer_off = false;
+                    timer2.Enabled = true;
                     string data = "kp0" + "ki0" + "kd0" + "sp0" + "time555";
                     serialPort1.Write(data + "\r\n");
 
@@ -498,7 +493,7 @@ namespace Areo_Pendulum
                 }
                 if (!showangel.Checked)
                 {
-                    on_off = false;
+                    timer_off = true;
                     if (txtSetPoint.Text == "") txtSetPoint.Text = "0";
                     SP = txtSetPoint.Text;
                     if (txtSP.Text == "") txtSP.Text = "0";
