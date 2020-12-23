@@ -383,7 +383,7 @@ namespace Areo_Pendulum
             }
         }
 
-        private void timer2_Tick_1(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
             if (timer_off) timer2.Enabled = false;
 
